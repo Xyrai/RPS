@@ -48,8 +48,8 @@ header {
 
 .circle {
   background-color: #141121;
-  width: 15vw;
-  height: 15vw;
+  width: 12vw;
+  height: 12vw;
   border-radius: 50%;
 
   box-shadow: 1px 1px 5px #000000;
@@ -57,9 +57,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
+.circle:hover {
+  cursor: pointer;
 }
 
 .icon {
-  width: 10vw;
+  width: 7vw;
 }

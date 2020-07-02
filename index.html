@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./main.css">
-  <script src="./main.js"></script>
   <title>Rock, Paper & Scissors</title>
 </head>
 
@@ -15,9 +14,9 @@
   </header>
 
   <div class="score-container">
-    <p>1</p>
+    <p id="player-score">0</p>
     <p>&nbsp;vs&nbsp;</p>
-    <p>0</p>
+    <p id="bot-score">0</p>
   </div>
 
   <div class="text-container">
@@ -27,15 +26,15 @@
   </div>
 
   <div class="circle-container">
-    <div class="circle">
+    <div onclick="selectedWeapon('rock');" class="circle">
       <img class="icon" src="images/rock.png">
     </div>
 
-    <div class="circle">
+    <div onclick="selectedWeapon('paper');" class="circle">
       <img class="icon" src="images/paper.png">
     </div>
 
-    <div class="circle">
+    <div onclick="selectedWeapon('scissors');" class="circle">
       <img class="icon" src="images/scissors.png">
     </div>
 
@@ -45,3 +44,4 @@
 </body>
 
 </html>
+<script src="./main.js"></script>
