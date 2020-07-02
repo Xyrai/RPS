@@ -6,10 +6,10 @@ function selectedWeapon(choice) {
 
   if (choice == randomBotSelection) {
     drawCounter++;
-    console.log(drawCounter);
     return setDrawText();
   }
 
+  // Switch statements... I know, I know.
   if (choice == "rock" && randomBotSelection == "scissors") {
     drawCounter = 0;
     setWinnerStats();
@@ -25,8 +25,7 @@ function selectedWeapon(choice) {
   }
 
   if (parseInt(document.getElementById('player-score').innerHTML) == parseInt(document.getElementById('bot-score').innerHTML)) {
-    resetTextColors();
-    return;
+    return resetTextColors();
   }
 
   if (parseInt(document.getElementById('player-score').innerHTML) > parseInt(document.getElementById('bot-score').innerHTML)) {
@@ -54,7 +53,3 @@ function resetTextColors() {
   document.getElementById('bot-score').style.color = '#FFF';
   document.getElementById('player-score').style.color = '#FFF';
 }
-
-// Rock wins vs Scissors
-// Paper wins vs Rock
-// Scissors win vs Paper
