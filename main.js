@@ -1,19 +1,26 @@
 const choices = ["rock", "paper", "scissors"];
+let drawCounter = 0;
 
 function selectedWeapon(choice) {
   const randomBotSelection = choices[Math.floor(Math.random() *  choices.length)];
 
   if (choice == randomBotSelection) {
+    drawCounter++;
+    console.log(drawCounter);
     return setDrawText();
   }
 
   if (choice == "rock" && randomBotSelection == "scissors") {
+    drawCounter = 0;
     setWinnerStats();
   } else if (choice == "paper" && randomBotSelection == "rock") {
+    drawCounter = 0;
     setWinnerStats();
   } else if (choice == "scissors" && randomBotSelection == "paper") {
+    drawCounter = 0;
     setWinnerStats();
   } else {
+    drawCounter = 0;
     setLoserStats();
   }
 
@@ -40,7 +47,7 @@ function setLoserStats() {
 }
 
 function setDrawText() {
-  document.getElementById('results-text').innerHTML  = "It's a draw!";
+  document.getElementById('results-text').innerHTML  = `It's a draw! (${drawCounter})`;
 }
 
 function resetTextColors() {

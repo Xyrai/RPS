@@ -50,6 +50,7 @@ header {
 
 .circle:hover {
   cursor: pointer;
+  background-color: #161121;
 }
 
 .icon {
@@ -120,14 +121,41 @@ header {
   text-shadow: 1px 1px 5px #000000;
 }
 
-@media only screen and (min-width: 768px) {
-  /* tablets and desktop */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* tablets */
+  header {
+    font-size: 4.5rem;
+  }
+
+  .circle-container {
+    margin: 3.5rem 0 0 0;
+  }
+  .circle {
+    width: 20vw;
+    height: 20vw;
+  }
 }
 
-@media only screen and (max-width: 767px) {
-  /* phones */
-}
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  header {
+    font-size: 3.5rem;
+  }
 
-@media only screen and (max-width: 767px) and (orientation: portrait) {
-  /* portrait phones */
+  .icon {
+    width: 10vw;
+  }
+  
+  .circle-container {
+    margin: 4rem 0 0 0;
+  }
+
+  .circle {
+    width: 26vw;
+    height: 26vw;
+  }
+
+  .score-container {
+    width: 22rem;
+    height: 8.2rem;
+  }
 }
