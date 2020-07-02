@@ -6,22 +6,33 @@ function selectedWeapon(choice) {
   console.log(randomBotSelection);
 
   if (choice == randomBotSelection) {
-    console.log('its a tie');
-    return
+    return document.getElementById('results-text').innerHTML = "It's a Tie!";
   }
 
   if (choice == "rock" && randomBotSelection == "scissors") {
     document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    return console.log('you win lol');
+    document.getElementById('results-text').innerHTML = "You Win!";
   } else if (choice == "paper" && randomBotSelection == "rock") {
     document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    return console.log('you win lol');
+    document.getElementById('results-text').innerHTML = "You Win!";
   } else if (choice == "scissors" && randomBotSelection == "paper") {
     document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    return console.log('you win lol');
+    document.getElementById('results-text').innerHTML = "You Win!";
   } else {
     document.getElementById('bot-score').innerHTML = parseInt(document.getElementById('bot-score').innerHTML) + 1;
-    console.log('you lose lol');
+    document.getElementById('results-text').innerHTML = "You Lose!";
+  }
+
+  if (parseInt(document.getElementById('player-score').innerHTML) == parseInt(document.getElementById('bot-score').innerHTML)) {
+    document.getElementById('bot-score').style.color = '#FFF';
+    document.getElementById('player-score').style.color = '#FFF';
+    return;
+  }
+
+  if (parseInt(document.getElementById('player-score').innerHTML) > parseInt(document.getElementById('bot-score').innerHTML)) {
+    document.getElementById('player-score').style.color = '#979E34';
+  } else {
+    document.getElementById('bot-score').style.color = '#979E34';
   }
 }
 
