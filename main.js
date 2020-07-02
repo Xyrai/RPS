@@ -1,31 +1,24 @@
-
 const choices = ["rock", "paper", "scissors"];
-function selectedWeapon(choice) {
 
+function selectedWeapon(choice) {
   const randomBotSelection = choices[Math.floor(Math.random() *  choices.length)];
-  console.log(randomBotSelection);
 
   if (choice == randomBotSelection) {
-    return document.getElementById('results-text').innerHTML = "It's a Tie!";
+    return setDrawText();
   }
 
   if (choice == "rock" && randomBotSelection == "scissors") {
-    document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    document.getElementById('results-text').innerHTML = "You Win!";
+    setWinnerStats();
   } else if (choice == "paper" && randomBotSelection == "rock") {
-    document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    document.getElementById('results-text').innerHTML = "You Win!";
+    setWinnerStats();
   } else if (choice == "scissors" && randomBotSelection == "paper") {
-    document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
-    document.getElementById('results-text').innerHTML = "You Win!";
+    setWinnerStats();
   } else {
-    document.getElementById('bot-score').innerHTML = parseInt(document.getElementById('bot-score').innerHTML) + 1;
-    document.getElementById('results-text').innerHTML = "You Lose!";
+    setLoserStats();
   }
 
   if (parseInt(document.getElementById('player-score').innerHTML) == parseInt(document.getElementById('bot-score').innerHTML)) {
-    document.getElementById('bot-score').style.color = '#FFF';
-    document.getElementById('player-score').style.color = '#FFF';
+    resetTextColors();
     return;
   }
 
@@ -34,6 +27,25 @@ function selectedWeapon(choice) {
   } else {
     document.getElementById('bot-score').style.color = '#979E34';
   }
+}
+
+function setWinnerStats() {
+  document.getElementById('player-score').innerHTML = parseInt(document.getElementById('player-score').innerHTML) + 1;
+  document.getElementById('results-text').innerHTML = "You win!";
+}
+
+function setLoserStats() {
+  document.getElementById('bot-score').innerHTML = parseInt(document.getElementById('bot-score').innerHTML) + 1;
+  document.getElementById('results-text').innerHTML = "You lose!";
+}
+
+function setDrawText() {
+  document.getElementById('results-text').innerHTML  = "It's a draw!";
+}
+
+function resetTextColors() {
+  document.getElementById('bot-score').style.color = '#FFF';
+  document.getElementById('player-score').style.color = '#FFF';
 }
 
 // Rock wins vs Scissors
