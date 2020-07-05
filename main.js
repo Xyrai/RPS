@@ -24,11 +24,14 @@ function selectedWeapon(choice) {
     setLoserStats();
   }
 
-  if (parseInt(document.getElementById('player-score').innerHTML) == parseInt(document.getElementById('bot-score').innerHTML)) {
+  let playerScore = parseInt(document.getElementById('player-score').innerHTML);
+  let botScore = parseInt(document.getElementById('bot-score').innerHTML);
+
+  if (playerScore == botScore) {
     return resetTextColors();
   }
 
-  if (parseInt(document.getElementById('player-score').innerHTML) > parseInt(document.getElementById('bot-score').innerHTML)) {
+  if (playerScore > botScore) {
     document.getElementById('player-score').style.color = '#979E34';
   } else {
     document.getElementById('bot-score').style.color = '#979E34';
